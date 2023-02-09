@@ -1,0 +1,159 @@
+body{
+  background-image: url('unnamed.jpg');
+  background-size:cover;
+  overflow-x:visible;
+  position: relative;
+} 
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.container {  
+  max-width: 100%;
+  display: grid;
+    grid-template-columns: 0.3fr 2.2fr 0.5fr;
+    grid-template-rows: 0.3fr 1.9fr 0.4fr 1.4fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    max-height: fit-content;
+    grid-template-areas:
+      "title title title"
+      "question question question"
+      "buttons buttons buttons"
+      "harr harr harr";
+  }
+  input[type=text]{
+    border-radius: 25px;
+    cursor: pointer;
+    min-height: 50px;
+    max-height: fit-content;
+    text-align: center;
+    font-size: x-large;
+    width: 85%;
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: fit-content;
+    word-wrap:break-word;
+  }
+  .title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    }
+  .title input[type=text]{
+    border: hidden;
+    width: auto;
+    text-align: center;
+    background-color: rgb(170, 166, 177);
+    cursor: pointer;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 25px;
+  }
+  .question {  display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    grid-template-rows: 0.7fr 1.1fr 1.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "mq mq"
+      "a1 a2"
+      "a3 a4";
+    grid-area: question;
+    align-items: center;  }
+  
+  .mq { grid-area: mq;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    min-height: 10px;
+    max-height: fit-content;
+  }
+  .mq input[type=text]{
+    min-height: 50px;
+    border-color: transparent;
+    background-color: cadetblue;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  .a1 { 
+    grid-area: a1; 
+    margin: 10px;
+    }
+  
+  .a2 {
+    grid-area: a2;
+    margin: 10px;
+    }
+  
+  
+  .a3 { 
+    grid-area: a3; 
+    margin: 10px;
+  }
+  
+  
+  .a4 { 
+    grid-area: a4;
+    margin: 10px;
+  }
+
+  
+  .buttons { grid-area: buttons;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button{
+  margin:50px;
+  min-height: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: x-large;
+  background-color: bisque;
+  cursor: pointer;
+}
+  
+  .harr { grid-area: harr; 
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+    .harr input[type=text]{
+      padding: 15px;
+      font-size: 1.6rem;
+    }
+  .highlighted{
+    border: 0.3rem solid red;  }
+
+  .rightans{
+    background-color: rgb(0, 255, 0);
+    font-size: xx-small
+  }
+
+  .wrongans{
+    background-color: red;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .question{
+      display: block;
+      width: 100%;
+    }
+    .mq,a1,a2,a3,a4{
+      display: flex;
+      justify-content: center;
+      align-items: centers;
+    }
+  }
